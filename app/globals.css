@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  
+  /* Color tokens - Dark mode crypto/AI aesthetic */
+  --color-background: #0a0e27;
+  --color-background-secondary: #111729;
+  --color-foreground: #e8eaf6;
+  --color-foreground-muted: #a0a9c9;
+  --color-primary: #00d4ff;
+  --color-primary-dark: #0099cc;
+  --color-accent: #7c3aed;
+  --color-accent-light: #a78bfa;
+  --color-success: #10b981;
+  --color-border: #1f2937;
+  --color-border-light: #374151;
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
