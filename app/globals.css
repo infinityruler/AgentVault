@@ -1,14 +1,14 @@
 @import 'tailwindcss';
 
-@theme inline {
+@theme {
   --font-sans: 'Geist', 'Geist Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   
-  /* Color tokens - Dark mode crypto/AI aesthetic */
+  /* Color palette - Dark mode crypto/AI aesthetic */
   --color-background: #0a0e27;
-  --color-background-secondary: #111729;
+  --color-bg-secondary: #111729;
   --color-foreground: #e8eaf6;
-  --color-foreground-muted: #a0a9c9;
+  --color-fg-muted: #a0a9c9;
   --color-primary: #00d4ff;
   --color-primary-dark: #0099cc;
   --color-accent: #7c3aed;
@@ -21,8 +21,22 @@
 }
 
 @layer base {
+  :root {
+    --background: 0 0% 6%;
+    --background-secondary: 0 0% 7%;
+    --foreground: 0 0% 91%;
+    --foreground-muted: 0 0% 63%;
+    --primary: 188 100% 50%;
+    --primary-dark: 195 100% 38%;
+    --accent: 270 91% 65%;
+    --accent-light: 270 76% 73%;
+    --success: 162 72% 65%;
+    --border: 217 33% 17%;
+    --border-light: 217 33% 22%;
+  }
+  
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-[#0a0e27] text-[#e8eaf6] font-sans;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -31,6 +45,23 @@
 }
 
 @layer utilities {
+  .bg-background { @apply bg-[#0a0e27]; }
+  .bg-background-secondary { @apply bg-[#111729]; }
+  .text-foreground { @apply text-[#e8eaf6]; }
+  .text-foreground-muted { @apply text-[#a0a9c9]; }
+  .text-primary { @apply text-[#00d4ff]; }
+  .bg-primary { @apply bg-[#00d4ff]; }
+  .text-primary-dark { @apply text-[#0099cc]; }
+  .bg-primary-dark { @apply bg-[#0099cc]; }
+  .text-accent { @apply text-[#7c3aed]; }
+  .bg-accent { @apply bg-[#7c3aed]; }
+  .text-accent-light { @apply text-[#a78bfa]; }
+  .bg-accent-light { @apply bg-[#a78bfa]; }
+  .text-success { @apply text-[#10b981]; }
+  .bg-success { @apply bg-[#10b981]; }
+  .border-border { @apply border-[#1f2937]; }
+  .border-border-light { @apply border-[#374151]; }
+  
   .text-balance {
     text-wrap: balance;
   }
