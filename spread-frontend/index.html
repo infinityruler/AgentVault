@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <main class="shell">
+      <header class="topbar reveal">
+        <div>
+          <p class="eyebrow">Spread</p>
+          <h1>Creator x Restaurant Campaigns</h1>
+        </div>
+        <div class="topbar-actions" id="session-actions"></div>
+      </header>
+
+      <section class="card reveal delay-1" id="auth-card">
+        <h2>Get Started</h2>
+        <p class="muted">Sign up or log in to manage offers, claims, and submissions.</p>
+
+        <div class="grid two">
+          <div>
+            <label>Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label>Password</label>
+            <input id="password" type="password" placeholder="At least 8 characters" />
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div>
+            <label>Role (for signup)</label>
+            <select id="role">
+              <option value="creator">Creator</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div>
+            <label>API Base URL</label>
+            <input id="api-base" type="text" value="" placeholder="http://localhost:4000" />
+          </div>
+        </div>
+
+        <div class="row actions">
+          <button id="signup-btn" class="btn primary">Sign Up</button>
+          <button id="login-btn" class="btn secondary">Log In</button>
+        </div>
+      </section>
+
+      <section class="dashboard hidden reveal delay-2" id="dashboard">
+        <div class="card">
+          <h2>Dashboard</h2>
+          <p class="muted" id="user-meta">Not logged in</p>
+
+          <div class="tabs" id="tabs"></div>
+          <div id="panel"></div>
+        </div>
+      </section>
+
+      <section class="card reveal delay-3">
+        <h2>Live Output</h2>
+        <pre id="output">Ready.</pre>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

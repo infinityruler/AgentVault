@@ -1,0 +1,16 @@
+import { NextFunction, Request, Response } from 'express';
+
+export class HttpError extends Error {
+  statusCode: number;
+
+  constructor(statusCode: number, message: string) {
+    super(message);
+    this.statusCode = statusCode;
+  }
+}
+
+export const asyncHandler =
+  (fn: (req: Request, res: Response, next: NextFunction) => Promise<void>) =>
+  (req: Request, res: Response, next: NextFunction) => {
+    fn(req, res, next).catch(next);
+  };
